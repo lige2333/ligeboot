@@ -10,10 +10,6 @@ public class OrderService {
     @Autowired
     private PayService payService;
 
-    public void initOrder(){
-
-    }
-
     public Order initOrder(String id, String value) {
         Order order = new Order(id, value);
         payService.payOrder(order);
