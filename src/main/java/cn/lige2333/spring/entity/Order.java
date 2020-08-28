@@ -3,7 +3,7 @@ package cn.lige2333.spring.entity;
 public class Order {
     private String id;
     private String value;
-    private Boolean isPaid = false;
+    private String isPaid;
 
     public String getId() {
         return id;
@@ -21,11 +21,11 @@ public class Order {
         this.value = value;
     }
 
-    public Boolean getPaid() {
+    public String getPaid() {
         return isPaid;
     }
 
-    public void setPaid(Boolean paid) {
+    public void setPaid(String paid) {
         isPaid = paid;
     }
 

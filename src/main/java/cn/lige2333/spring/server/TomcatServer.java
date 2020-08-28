@@ -7,17 +7,11 @@ import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 
 public class TomcatServer {
-    private Tomcat tomcat;
-    private String[] args;
+    private Tomcat tomcat = new Tomcat();
 
-    public TomcatServer(String[] args) {
-        this.args = args;
-    }
 
     public void startServer() throws LifecycleException {
         //实例化tomcat
-        tomcat = new Tomcat();
-        tomcat.setPort(8000);
         tomcat.start();
         //实例化context容器
         Context context = new StandardContext();
@@ -40,6 +34,10 @@ public class TomcatServer {
         //设置为非守护线程
         awaitThread.setDaemon(false);
         awaitThread.start();
+    }
+
+    public void setport(Integer port){
+        tomcat.setPort(port);
     }
 
 }
